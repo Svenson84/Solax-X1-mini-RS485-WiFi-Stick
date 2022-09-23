@@ -1,0 +1,158 @@
+<!DOCTYPE html><html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+<meta name="apple-mobile-web-app-title" content="SolaxWeb">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<link rel="icon" href="/favicon.ico" />
+<link rel="apple-touch-icon" href="/touch-icon-iphone.png" />
+<link rel="apple-touch-startup-image" href="/launch.png" />
+<link rel="stylesheet" href="/solax.css" />
+<link rel="stylesheet" href="/remixicon.css" />
+<title>Solax Web</title>
+<script src="/chart.min.js"></script>
+<script src="/solax.js"></script>
+</head>
+<body onload="AutoReload()">
+	<div class="wrapper">
+  
+    <div class="limiter">
+	  	<div class="container-table100">
+	  		<div class="wrap-table100">
+	  			<div class="table100 ver2 greytext m-b-110">
+	  				<div class="table100-head">
+	  					<table>
+	  						<thead>
+	  							<tr class="row100 head">
+	  								<th class="cell100">Solax Webinterface</th>
+	  							</tr>
+	  						</thead>
+	  					</table>
+	  				</div>
+            <table class="chart">
+              <tr class="row100 body">
+                <th class="cell100"><canvas id="chart" width="400" height="400" style="width:100%;"></canvas></th>
+              </tr>
+            </table>
+	  				<div class="table100-body">
+	  					<table>
+	  						<tbody>
+	  							<tr class="row100 body">
+	  								<td class="cell100 column1"><i class="ri-function-line"></i></td>
+	  								<td class="cell100 column2">Mode</td>
+	  								<td class="cell100 column3"><div id="mode_name"></div></td>
+	  							</tr>
+    
+	  							<tr class="row100 body">
+	  								<td class="cell100 column1"><i class="ri-temp-cold-line"></td>
+	  								<td class="cell100 column2">Temperature</td>
+	  								<td class="cell100 column3"><div id="temperature"></div></td>
+	  							</tr>
+    
+	  							<tr class="row100 body">
+	  								<td class="cell100 column1"><i class="ri-flashlight-line"></td>
+	  								<td class="cell100 column2">AC Power</td>
+	  								<td class="cell100 column3"><div id="ac_power"></div></td>
+	  							</tr>
+        
+								  <tr class="row100 body">
+									  <td class="cell100 column1"><i class="ri-flashlight-line"></td>
+									  <td class="cell100 column2">DC Power</td>
+									  <td class="cell100 column3"><div id="dc_power"></div></td>
+								  </tr>
+                    
+	  							<tr class="row100 body">
+	  								<td class="cell100 column1"><i class="ri-flashlight-line"></td>
+	  								<td class="cell100 column2">Power Loss</td>
+	  								<td class="cell100 column3"><div id="power_loss"></div></td>
+	  							</tr>
+    
+	  							<tr class="row100 body">
+	  								<td class="cell100 column1"><i class="ri-sun-line"></td>
+	  								<td class="cell100 column2">Energy Today</td>
+	  								<td class="cell100 column3"><div id="energy_today"></div></td>
+	  							</tr>
+    
+	  							<tr class="row100 body">
+	  								<td class="cell100 column1"><i class="ri-sun-fill"></td>
+	  								<td class="cell100 column2">Energy Total</td>
+	  								<td class="cell100 column3"><div id="energy_total"></div></td>
+	  							</tr>
+    
+	  							<tr class="row100 body">
+	  								<td class="cell100 column1"><i class="ri-pulse-line"></i></td>
+	  								<td class="cell100 column2">DC Voltage</td>
+	  								<td class="cell100 column3"><div id="dc_voltage"></div></td>
+	  							</tr>
+    
+	  							<tr class="row100 body">
+	  								<td class="cell100 column1"><i class="ri-login-circle-line"></td>
+	  								<td class="cell100 column2">DC Current</td>
+	  								<td class="cell100 column3"><div id="dc_current"></div></td>
+	  							</tr>
+
+	  							<tr class="row100 body">
+	  								<td class="cell100 column1"><i class="ri-pulse-line"></i></td>
+	  								<td class="cell100 column2">AC Voltage</td>
+	  								<td class="cell100 column3"><div id="ac_voltage"></div></td>
+	  							</tr>
+    
+	  							<tr class="row100 body">
+	  								<td class="cell100 column1"><i class="ri-login-circle-line"></td>
+	  								<td class="cell100 column2">AC Current</td>
+	  								<td class="cell100 column3"><div id="ac_current"></div></td>
+	  							</tr>
+    
+	  							<tr class="row100 body">
+	  								<td class="cell100 column1"><i class="ri-exchange-funds-line"></td>
+	  								<td class="cell100 column2">AC Frequency</td>
+	  								<td class="cell100 column3"><div id="ac_frequency"></div></td>
+	  							</tr>
+    
+	  							<tr class="row100 body">
+	  								<td class="cell100 column1"><i class="ri-error-warning-line"></i></td>
+	  								<td class="cell100 column2">Error Bits</td>
+	  								<td class="cell100 column3"><div id="error_bits"></div></td>
+	  							</tr>
+    
+	  							<tr class="row100 body">
+	  								<td class="cell100 column1"><i class="ri-time-line"></td>
+	  								<td class="cell100 column2">Runtime</td>
+	  								<td class="cell100 column3"><div id="runtime"></div></td>
+	  							</tr>
+    
+	  							<tr class="row100 body">
+	  								<td class="cell100 column1"><i class="ri-time-fill"></td>
+	  								<td class="cell100 column2">Runtime Total</td>
+	  								<td class="cell100 column3"><div id="runtime_total"></div></td>
+	  							</tr>
+    
+	  							<tr class="row100 body">
+	  								<td class="cell100 column1"><i class="ri-broadcast-line"></td>
+	  								<td class="cell100 column2">WiFi SSID</td>
+	  								<td class="cell100 column3"><div id="wifi_ssid"></div></td>
+	  							</tr>
+    
+	  							<tr class="row100 body">
+	  								<td class="cell100 column1"><i class="ri-earth-line"></td>
+	  								<td class="cell100 column2">WiFi IP</td>
+	  								<td class="cell100 column3"><div id="wifi_ip"></div></td>
+	  							</tr>
+    
+	  							<tr class="row100 body">
+	  								<td class="cell100 column1"><i class="ri-wifi-line"></td>
+	  								<td class="cell100 column2">WiFi RSSI</td>
+	  								<td class="cell100 column3"><div id="wifi_rssi"></div></td>
+	  							</tr>
+    
+	  						</tbody>
+	  					</table>
+	  				</div>
+	  			</div>
+    
+	  		</div>
+	  	</div>
+	  </div>
+    
+  </div>
+</body>
+</html>
