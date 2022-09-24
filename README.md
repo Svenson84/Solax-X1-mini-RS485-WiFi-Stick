@@ -1,21 +1,21 @@
 # Solax-X1-mini-RS485-WiFi-Stick
 
-RS485 WiFi Stick is a project to monitor the Solax X1 mini via RS485 interface. 
+RS485 WiFi Stick is a project to monitor the Solax X1 mini via RS485 interface.  
 Optional data can be stored in a InfluxDB.
 
 ![Webinterface](/docs/Screenshot_Webinterface.jpeg "Webinterface")
 
-## What it does and what doesn't?
-This software provides a local webinterface via a wifi connection for the "Solax X1 Mini" power inverter.
-An ESP8266 (Wemos D1 mini) with an external RS485 transceiver (MAX 3485) is used as a gateway between the RS485 of the Solax power inverter and your private LAN/WiFi. 
-It does only use the RS485 to communicate with the Solax power inverter!
-It does NOT required the official Solax WIFI or LAN stick!
-It does NOT use the Solax cloud connection or Solax API! 
-It does NOT require any internet connection!
+## What it does and what it doesn't?
+This software provides a local webinterface via a wifi connection for the "Solax X1 Mini" power inverter.  
+An ESP8266 (Wemos D1 mini) with an external RS485 transceiver (MAX 3485) is used as a gateway between the RS485 of the Solax power inverter and your private LAN/WiFi.   
+It does only use the RS485 to communicate with the Solax power inverter!  
+It does NOT required the official Solax WIFI or LAN stick!  
+It does NOT use the Solax cloud connection or Solax API!  
+It does NOT require any internet connection!  
 
 ## References
-This code uses, and/or is partly based on, and/or is inspired by the following projects:
-https://github.com/JensJordan/solaXd
+This code uses, and/or is partly based on, and/or is inspired by the following projects:  
+https://github.com/JensJordan/solaXd  
 https://github.com/syssi/esphome-modbus-solax-x1
 
 ## Hardware
