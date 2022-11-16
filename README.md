@@ -41,6 +41,13 @@ https://github.com/syssi/esphome-modbus-solax-x1
 └─────────┘              └─────────────┘           └─────────────────┘
 ```
 
+### Modification of WEMOS D1 mini board
+Serial resistors for TX and RX on the Wemos D1 mini have been removed.  
+Remark: I am not sure if it is mandatory to remove thoses resistors. In the beginning i had troubles to get the RS485 working, so i removed thoses resistors and never tested again with populated resistors!  
+
+Be careful: if you remove thoses resistors, a flashing/programming via USB interface of the WEMOS D1 mini is not possible anymore.  
+You have to flash the software before removing of the resistors. With flashing the software, also a Over-The-Air  (OTA) will be flashed. Then it is still possible to flash an update via OTA if the resistors have been removed.
+
 ### Modification of RS485 board
 I was not able to find a RS485 board, that was using the MAX3485 (3.3V version) instead of the regular MAX485 (5V version). 
 It might work also with the MAX485, but i used only the MAX3485 - without any issues all the time. 
@@ -50,7 +57,7 @@ It might work also with the MAX485, but i used only the MAX3485 - without any is
 Originally the DE/RE pins are controlled automatically. By cutting the PCB track and connecting the DE/RE pins to the ESP8266 pin D1 by a single wire, the flow controll is handled by the ESP8266 SW.
 
 
-### X1 Min RJ45 jack
+### Solax X1 Mini RS485 interface
 
 | Pin     | Purpose      | RS485-to-TTL pin  | Color T-568B |
 | :-----: | :----------- | :---------------- | ------------ |
@@ -62,3 +69,17 @@ Originally the DE/RE pins are controlled automatically. By cutting the PCB track
 |    6    | E_Stop       |                   |              |
 |    7    | **GND_COM**  | **GND**           | Brown-White  |
 |    8    | --           |                   |              |
+
+## Software
+
+The available code is available for the Arduino IDE and developed with a Wemos D1 mini ESP8266.
+
+### Website
+The application uses LittleFS. The Webinterface can also be uploaded directly with the Arduino IDE by a LittleFS file upload to the target hardware. 
+
+### InfluxDB
+ToDo
+
+## Mechanical
+
+### Housing
